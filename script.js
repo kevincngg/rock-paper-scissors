@@ -1,5 +1,5 @@
 function getComputerChoice() {
-
+    // Picks a random number between 0-2 for the computer's choice
     let computerChoice = Math.floor(Math.random() * 3)
 
     if (computerChoice === 0) {
@@ -15,23 +15,27 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-
+    // Prompt's user to choose between rock, paper, or scissors.
     let humanChoice = prompt("Please enter your choice between rock, paper, and scissors:");
     return humanChoice.toLowerCase();
 
 }
 
 function playGame() {
-
+    // Initialize score and round variables.
     let humanScore = 0;
     let computerScore = 0;
     let totalRounds = 0;
+
+    // While totalRounds is < 5 play the game.
     while (totalRounds < 5) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
         totalRounds += 1;
     }
+
+    // Conditions depending on the amount of rounds won between the user and the computer.
     if (computerScore > humanScore) {
         console.log("You lost the game! Better luck next time!");
     }
@@ -42,6 +46,7 @@ function playGame() {
         console.log("The game ends in a tie!");
     }
 
+    // Function that prints who won the round and updates the score of the winner or loser.
     function playRound(humanChoice, computerChoice) {
         if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "scissors" && computerChoice === "paper") || (humanChoice === "paper" && computerChoice === "rock")) {
             console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
