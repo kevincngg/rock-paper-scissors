@@ -43,28 +43,18 @@ function playGame() {
     }
 
     function playRound(humanChoice, computerChoice) {
-        let result = null;
         if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "scissors" && computerChoice === "paper") || (humanChoice === "paper" && computerChoice === "rock")) {
-            result = 1;
-        }
-        else if ((humanChoice === "rock" && computerChoice === "paper") || (humanChoice === "scissors" && computerChoice === "rock") || (humanChoice === "paper" && computerChoice === "scissors")) {
-            result = 0;
-        }
-        else{
-            result = -1;
-        }
-
-        if (result === 1) {
             console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
             humanScore += 1;
         }
-        else if (result === 0) {
+        else if ((humanChoice === "rock" && computerChoice === "paper") || (humanChoice === "scissors" && computerChoice === "rock") || (humanChoice === "paper" && computerChoice === "scissors")) {
             console.log(`You Lose! ${computerChoice} beats ${humanChoice}!`);
             computerScore += 1;
         }
-        else if (result === -1) {
+        else {
             console.log("This round is a Tie!");
         }
+
     }
 
 }
