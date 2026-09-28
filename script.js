@@ -26,7 +26,7 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     let totalRounds = 0;
-    while (totalRounds != 5) {
+    while (totalRounds < 5) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
@@ -54,15 +54,15 @@ function playGame() {
             result = -1;
         }
 
-        if (result == 1) {
+        if (result === 1) {
             console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
             humanScore += 1;
         }
-        else if (result == 0) {
+        else if (result === 0) {
             console.log(`You Lose! ${computerChoice} beats ${humanChoice}!`);
             computerScore += 1;
         }
-        else if (result == -1) {
+        else if (result === -1) {
             console.log("This round is a Tie!");
         }
     }
