@@ -1,7 +1,7 @@
 
 function getComputerChoice(){
 
-    computerChoice = Math.floor(Math.random() * 3)
+    let computerChoice = Math.floor(Math.random() * 3)
 
     if (computerChoice === 0){
         return "rock"
@@ -13,4 +13,11 @@ function getComputerChoice(){
         return "paper"
     }
         
+}
+
+function getHumanChoice(){
+
+let humanChoice = prompt("Please enter your choice between rock, paper, and scissors:");    return humanChoice;
+return humanChoice;
+
 }
