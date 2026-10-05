@@ -1,3 +1,14 @@
+// Initialize score and round variables.
+let humanScore = 0;
+let computerScore = 0;
+let totalRounds = 0;
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        // Perform actions here
+        playRound(humanSelection, ComputerSelection);
+    });
+});
 function getComputerChoice() {
     // Picks a random number between 0-2 for the computer's choice
     let computerChoice = Math.floor(Math.random() * 3)
@@ -16,16 +27,14 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     // Prompt's user to choose between rock, paper, or scissors.
-    let humanChoice = prompt("Please enter your choice between rock, paper, and scissors:");
+    let humanChoice = document.getElementById()
     return humanChoice.toLowerCase();
+    
 
 }
 
 function playGame() {
-    // Initialize score and round variables.
-    let humanScore = 0;
-    let computerScore = 0;
-    let totalRounds = 0;
+
 
     // // While totalRounds is < 5 play the game.
     // while (totalRounds < 5) {
