@@ -27,13 +27,13 @@ function playGame() {
     let computerScore = 0;
     let totalRounds = 0;
 
-    // While totalRounds is < 5 play the game.
-    while (totalRounds < 5) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-        totalRounds += 1;
-    }
+    // // While totalRounds is < 5 play the game.
+    // while (totalRounds < 5) {
+    //     const humanSelection = getHumanChoice();
+    //     const computerSelection = getComputerChoice();
+    //     playRound(humanSelection, computerSelection);
+    //     totalRounds += 1;
+    // }
 
     // Conditions depending on the amount of rounds won between the user and the computer.
     if (computerScore > humanScore) {
