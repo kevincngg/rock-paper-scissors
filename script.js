@@ -2,6 +2,7 @@
 let humanScore = 0;
 let computerScore = 0;
 let totalRounds = 0;
+const resultsDiv = document.querySelector('#results');
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click', (event) => {
@@ -26,8 +27,8 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    // Prompt's user to choose between rock, paper, or scissors.
-    let humanChoice = document.getElementById()
+    // User's choice of button.
+    let humanChoice = document.querySelectorAll('choice');
     return humanChoice.toLowerCase();
     
 
@@ -58,15 +59,15 @@ function playGame() {
     // Function that prints who won the round and updates the score of the winner or loser.
     function playRound(humanChoice, computerChoice) {
         if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "scissors" && computerChoice === "paper") || (humanChoice === "paper" && computerChoice === "rock")) {
-            console.log(`You Win! ${humanChoice} beats ${computerChoice}!`);
+            resultsDiv.textContent = `You Win! ${humanChoice} beats ${computerChoice}!`;
             humanScore += 1;
         }
         else if ((humanChoice === "rock" && computerChoice === "paper") || (humanChoice === "scissors" && computerChoice === "rock") || (humanChoice === "paper" && computerChoice === "scissors")) {
-            console.log(`You Lose! ${computerChoice} beats ${humanChoice}!`);
+            resultsDiv.textContent = `You Lose! ${computerChoice} beats ${humanChoice}!`;
             computerScore += 1;
         }
         else {
-            console.log("This round is a Tie!");
+            resultsDiv.textContent = `This round is a Tie!`;
         }
 
     }
